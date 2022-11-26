@@ -8,10 +8,10 @@ fn main() -> Result<(), TransactionError> {
     }
 
     let t =
-        get_first_transaction_for("data/transactions.json", "Dima")
+        get_first_transaction_for("data/transactions.json", "Steve")
             .ok_or("Couldn't find transaction for Dima")?;
 
-    println!("First transaction for Dima is {:?}", t);
+    println!("First transaction for Steve is {:?}", t);
 
     Ok(())
 }
