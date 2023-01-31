@@ -4,6 +4,7 @@ mod structs;
 mod enums;
 mod traits;
 mod generics;
+mod leetcode;
 
 // Just import for simplified tests
 // use vectors::basics;
