@@ -53,14 +53,7 @@ impl PrefixSum4 {
     }
 }
 
-// function which creates a vector of i32 and returns it as slice
-// https://stackoverflow.com/questions/32682876/is-there-any-way-to-return-a-reference-to-a-variable-created-in-a-function
-fn create_vec() -> Vec<i32> {
-    vec![1, 2, 3, 4]
-}
-
 pub fn run() {
-    create_vec();
     let nums = vec![1, 2, 3, 4];
     println!("{:?}", PrefixSum1::running_sum(&nums));
     println!("{:?}", PrefixSum2::running_sum(&nums));

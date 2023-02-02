@@ -33,6 +33,13 @@ impl<T: Display + PartialOrd> Pair<T> {
     }
 }
 
+// function which creates a vector of i32 and returns it as slice
+// https://stackoverflow.com/questions/32682876/is-there-any-way-to-return-a-reference-to-a-variable-created-in-a-function
+// This returns a vector and returns a copy of it - not a reference
+fn create_vec() -> Vec<i32> {
+    vec![1, 2, 3, 4]
+}
+
 fn create_vector_box() -> Box<Vec<i32>> {
     Box::new(vec![1, 2, 3, 4])
 }
