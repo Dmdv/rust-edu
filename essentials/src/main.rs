@@ -11,6 +11,8 @@ mod leetcode;
 
 /// This is a Doc comment outside the function
 fn main() {
+    leetcode::run();
+
     generics::functions();
     generics::generic_structs();
 

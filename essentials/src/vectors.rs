@@ -30,6 +30,20 @@ pub fn iterators() {
 }
 
 #[allow(unused)]
+pub fn whiling() {
+    let mut stack = Vec::new();
+
+    stack.push(1);
+    stack.push(2);
+    stack.push(3);
+
+    while let Some(top) = stack.pop() {
+        // Prints 3, 2, 1
+        println!("{top}");
+    }
+}
+
+#[allow(unused)]
 pub fn looping() {
     // define a vector of size 5
     let my_vec = vec![1, 2, 3, 4, 5];
