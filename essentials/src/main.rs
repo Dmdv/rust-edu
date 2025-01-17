@@ -9,6 +9,7 @@ mod lend_borrow;
 mod iterators;
 mod loops;
 mod hash_map;
+mod functional;
 // Just import for simplified tests
 // use vectors::basics;
 

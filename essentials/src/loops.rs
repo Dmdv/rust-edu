@@ -1,3 +1,4 @@
+#[allow(unused)]
 fn nested_loop() {
     'outer: for i in 0..5 {
         'inner: for j in 0..5 {
