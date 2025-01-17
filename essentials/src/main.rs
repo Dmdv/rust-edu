@@ -10,6 +10,7 @@ mod iterators;
 mod loops;
 mod hash_map;
 mod functional;
+mod set;
 // Just import for simplified tests
 // use vectors::basics;
 
