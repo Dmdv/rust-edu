@@ -5,12 +5,16 @@ mod enums;
 mod traits;
 mod generics;
 mod leetcode;
-
+mod lend_borrow;
+mod iterators;
+mod loops;
+mod hash_map;
 // Just import for simplified tests
 // use vectors::basics;
 
 /// This is a Doc comment outside the function
 fn main() {
+    lend_borrow::run();
     leetcode::run();
 
     generics::functions();
