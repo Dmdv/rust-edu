@@ -11,6 +11,7 @@ mod loops;
 mod hash_map;
 mod functional;
 mod set;
+mod file_system;
 // Just import for simplified tests
 // use vectors::basics;
 
