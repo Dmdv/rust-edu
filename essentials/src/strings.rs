@@ -37,3 +37,7 @@ fn reverse_string(str: String) -> String {
 fn reserse_string_simpl(str: String) -> String {
     str.chars().rev().collect()
 }
+
+fn is_palyndrom(str: &str) -> bool {
+    str.chars().eq(str.chars().rev())
+}
