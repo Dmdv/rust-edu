@@ -19,3 +19,21 @@ fn test(my_str:String)-> String {
     res.pop();
     res
 }
+
+#[allow(unused)]
+fn reverse_string(str: String) -> String {
+    let s = str.as_str();
+    let chars: Vec<char> = s.chars().collect();
+    let len = chars.len();
+    let mut res = vec!['\0'; len];
+
+    for i in 0..len / 2 {
+        res[i] = chars[len - 1 - i]
+    }
+    
+    res.into_iter().collect()
+}
+
+fn reserse_string_simpl(str: String) -> String {
+    str.chars().rev().collect()
+}
