@@ -8,6 +8,8 @@ impl Counter {
     }
 }
 
+// Stateful iterator
+
 impl Iterator for Counter {
     type Item = u32;
 
@@ -18,6 +20,26 @@ impl Iterator for Counter {
         } else {
             None
         }
+    }
+}
+
+struct MyCollection {
+    items: Vec<i32>,
+}
+
+impl IntoIterator for MyCollection {
+    type Item = i32;
+    type IntoIter = std::vec::IntoIter<i32>;
+
+    fn into_iter(self) -> Self::IntoIter {
+        self.items.into_iter()
+    }
+}
+
+fn impl_iterator() {
+    let my_collection = MyCollection { items: vec![1, 2, 3, 4, 5] };
+    for item in my_collection {
+        println!("{}", item);
     }
 }
 
@@ -64,4 +86,21 @@ fn iterator_examples(s: &str) {
     // 10. Chain: combine multiple iterators
     let doubled: String = chars.iter().chain(chars.iter()).collect();
     println!("Doubled: {}", doubled);
+}
+
+#[cfg(test)]
+mod test {
+    use super::*;
+
+    #[test]
+    fn test_iterator() {
+        let counter = Counter::new();
+        for i in counter {
+            println!("{}", i);
+        }
+
+        impl_iterator();
+
+        iterator_examples("hello");
+    }
 }

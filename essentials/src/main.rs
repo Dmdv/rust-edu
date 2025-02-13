@@ -12,6 +12,8 @@ mod hash_map;
 mod functional;
 mod set;
 mod file_system;
+mod ip;
+mod collections;
 // Just import for simplified tests
 // use vectors::basics;
 
