@@ -2,9 +2,43 @@ pub struct Counter {
     count: u32,
 }
 
+pub struct Split<'input> {
+    input: &'input str,
+    delimiter: char,
+}
+
 impl Counter {
     pub fn new() -> Counter {
         Counter {count : 0}
+    }
+}
+
+impl<'input> Split<'input> {
+    pub fn new(input: &'input str, delimiter: char) -> Split<'input> {
+        Split { input, delimiter }
+    }
+}
+
+impl<'input> Iterator for Split<'input> {
+    type Item = &'input str;
+
+    fn next(&mut self) -> Option<Self::Item> {
+        if self.input.is_empty() {
+            return None;
+        }
+
+        match self.input.find(self.delimiter) {
+            Some(index) => {
+                let result = &self.input[..index];
+                self.input = &self.input[index + self.delimiter.len_utf8()..];
+                Some(result)
+            }
+            None => {
+                let result = self.input;
+                self.input = "";
+                Some(result)
+            }
+        }
     }
 }
 
