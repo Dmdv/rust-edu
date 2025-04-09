@@ -62,6 +62,12 @@ fn main() {
     
     // Run all examples from the containers module
     containers::run_all_examples();
+
+    println!("\nRust Iterator Tutorial");
+    println!("=====================\n");
+    
+    // Run all examples from the iterators module
+    iterators::run_all_examples();
 }
 
 fn fibonacci(term: i32) -> i32 {
