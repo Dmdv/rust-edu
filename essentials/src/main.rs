@@ -14,6 +14,7 @@ mod set;
 mod file_system;
 mod ip;
 mod collections;
+mod containers;
 // Just import for simplified tests
 // use vectors::basics;
 
@@ -55,6 +56,12 @@ fn main() {
     output();
     triangle(5);
     fibonacci(3);
+
+    println!("Rust Container Types Tutorial");
+    println!("=============================\n");
+    
+    // Run all examples from the containers module
+    containers::run_all_examples();
 }
 
 fn fibonacci(term: i32) -> i32 {
@@ -240,7 +247,7 @@ fn strings() {
     let s: String = "hello world".to_string();
 
     // A string slice – an immutable view into another string
-    // This is basically an immutable pair of pointers to a string – it does’t
+    // This is basically an immutable pair of pointers to a string – it does't
     // actually contain the contents of a string, just a pointer to
     // the begin and a pointer to the end of a string buffer,
     // statically allocated or contained in another object (in this case, `s`).
