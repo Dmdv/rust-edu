@@ -15,7 +15,7 @@ The `Send` trait indicates that ownership of a type can be transferred between t
 - Raw pointers (`*const T` and `*mut T`) are not `Send` by default
 
 ### Example of Send Types:
-```rust
+```
 // These types are Send
 let x: i32 = 5;           // i32 is Send
 let y: String = "hello".to_string();  // String is Send
@@ -23,7 +23,7 @@ let z: Vec<i32> = vec![1, 2, 3];     // Vec is Send
 ```
 
 ### Example of Non-Send Types:
-```rust
+```
 use std::rc::Rc;
 
 // Rc is not Send because it uses non-atomic reference counting
@@ -45,7 +45,7 @@ The `Sync` trait indicates that a type is safe to be shared between threads. A t
 - `Rc<T>` is not `Sync` because its reference counting is not atomic
 
 ### Example of Sync Types:
-```rust
+```
 // These types are Sync
 let x: &i32 = &5;         // &i32 is Sync
 let y: &String = &"hello".to_string();  // &String is Sync
@@ -53,7 +53,7 @@ let z: &Vec<i32> = &vec![1, 2, 3];     // &Vec is Sync
 ```
 
 ### Example of Non-Sync Types:
-```rust
+```
 use std::cell::RefCell;
 
 // RefCell is not Sync because it's not thread-safe
@@ -67,7 +67,7 @@ let cell = RefCell::new(5);
 ## Common Patterns and Best Practices
 
 ### 1. Using Arc for Shared Ownership
-```rust
+```
 use std::sync::Arc;
 use std::thread;
 
@@ -87,7 +87,7 @@ for handle in handles {
 ```
 
 ### 2. Using Mutex for Shared Mutable State
-```rust
+```
 use std::sync::{Arc, Mutex};
 use std::thread;
 
@@ -110,7 +110,7 @@ println!("Result: {}", *counter.lock().unwrap());
 ```
 
 ### 3. Using RwLock for Multiple Readers
-```rust
+```
 use std::sync::{Arc, RwLock};
 use std::thread;
 
